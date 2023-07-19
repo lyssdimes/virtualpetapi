@@ -1,5 +1,6 @@
 package com.example.virtualpetapi.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -33,26 +34,19 @@ public class Shelter {
     }
 
     @OneToMany(mappedBy = "shelter")
-    private List<OrganicDog> orgDogs;
-    // private List<OrganicDog> orgDogs = new ArrayList<>();
+    private List<OrganicDog> orgDogs = new ArrayList<>();
 
     @OneToMany(mappedBy = "shelter")
-    private List<OrganicCat> orgCats;
-    
-
-    // private List<OrganicCat> orgCats = new ArrayList<>();
+    private List<OrganicCat> orgCats = new ArrayList<>();
 
     @OneToMany(mappedBy = "shelter")
-    private List<RoboticDog> roboDogs;
-    // private List<RoboticDog> roboDogs = new ArrayList<>();
+    private List<RoboticDog> roboDogs = new ArrayList<>();
 
     @OneToMany(mappedBy = "shelter")
-    private List<RoboticCat> roboCats;
-    // private List<RoboticCat> roboCats = new ArrayList<>();
+    private List<RoboticCat> roboCats = new ArrayList<>();
 
     @ManyToMany(mappedBy = "shelters")
-    private List<Volunteer> volunteers;
-    // private List<Volunteer> volunteers = new ArrayList<>();
+    private List<Volunteer> volunteers = new ArrayList<>();
 
     public List<OrganicDog> getOrgDogs() {
         return orgDogs;

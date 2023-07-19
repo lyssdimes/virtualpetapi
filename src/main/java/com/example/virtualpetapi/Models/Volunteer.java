@@ -1,5 +1,6 @@
 package com.example.virtualpetapi.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -18,8 +19,8 @@ public class Volunteer {
 
     private String name;
 
-    public Volunteer(){
-
+    public Volunteer() {
+        this.shelters = new ArrayList<>();
     }
 
     public Volunteer(String name) {
@@ -36,7 +37,7 @@ public class Volunteer {
 
     @ManyToMany
     @JoinTable(name = "shelter_volunteer", joinColumns = @JoinColumn(name = "volunteer_id"), inverseJoinColumns = @JoinColumn(name = "shelter_id"))
-    private List<Shelter> shelters;
+    private List<Shelter> shelters = new ArrayList<>();
 
     @Override
     public String toString() {
