@@ -46,6 +46,7 @@ public class Shelter {
     private List<RoboticCat> roboCats = new ArrayList<>();
 
     @ManyToMany(mappedBy = "shelters")
+    
     private List<Volunteer> volunteers = new ArrayList<>();
 
     public List<OrganicDog> getOrgDogs() {
